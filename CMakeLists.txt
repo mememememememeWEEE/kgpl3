@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 project(KGPL-demo)
 
-add_subdirectory(src)
+add_subdirectory(src/KGPL)
 
 add_executable(KGPL-demo ex.cpp)
 
