@@ -3,6 +3,6 @@ project(KGPL-demo)
 
 add_subdirectory(src/KGPL)
 
-add_executable(KGPL-demo ex.cpp)
+add_executable(${PROJECT_NAME} src/ex.cpp)
 
-target_link_libraries(KGPL-demo KGPL)
+target_link_libraries(${PROJECT_NAME} KGPL)
