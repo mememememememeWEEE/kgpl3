@@ -6,7 +6,7 @@ int main(void)
         1200, 800, "Example Game"
     });
 
-    auto h = KGPL::CompileVertexShader("h", true);
+    auto h = KGPL::ShaderUtil::CompileVertexShader("h", true);
 
     /* Loop until the user closes the window */
     for (int i = 0; i < 100000; i++) {
