@@ -16,6 +16,6 @@
 #include "core/global.hpp"
 #include "core/init.hpp"
 #include "core/quit.hpp"
-
+#include "render/renderer.hpp"
 
 #endif
