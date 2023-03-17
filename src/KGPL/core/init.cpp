@@ -5,7 +5,8 @@ bool KGPL::init(const InitArgs& args) noexcept {
 
 	KGPL_LOG_INFO("Initializing KGPL");
 	KGPLm::WindowWidth = args.width; KGPLm::WindowHeight = args.height; KGPLm::Initialized = true;
-	KGPL_LOG_INFO("Creating window with args: \nwidth=%d\nheight=%d\ntitle=%s", KGPLm::WindowWidth, KGPLm::WindowHeight, args.title);
+	KGPL_LOG_INFO("Creating window with args: \n\t\twidth  = %d\n\t\theight = %d\n\t\ttitle  = %s\n",
+		KGPLm::WindowWidth, KGPLm::WindowHeight, args.title);
 
 	if (!glfwInit()) goto err_t;
 	KGPLm::Window = glfwCreateWindow(KGPLm::WindowWidth, KGPLm::WindowHeight, args.title, NULL, NULL);
