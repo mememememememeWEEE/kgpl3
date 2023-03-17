@@ -5,13 +5,13 @@ bool KGPL::init(const InitArgs& args) noexcept {
 
 	KGPL_LOG_INFO("Initializing KGPL");
 	KGPLm::WindowWidth = args.width; KGPLm::WindowHeight = args.height; KGPLm::Initialized = true;
-	/*KGPL_LOG_INFO("Creating window with args: \n\t\t"
-					"width  = % d\n\t\t"
-					"height = % d\n\t\t"
-					"title  = % s\n\t\t"
+	KGPL_LOG_INFO("Creating window with arguments: \n\t\t"
+					"width  = %d\n\t\t"
+					"height = %d\n\t\t"
+					"title  = %s\n\t\t"
 					"OpenGL requested version = %d.%d"
 					"\n",
-		KGPLm::WindowWidth, KGPLm::WindowHeight, args.title, args.OpenGL_VersionMajor, args.OpenGL_VersionMinor);*/
+		KGPLm::WindowWidth, KGPLm::WindowHeight, args.title, args.OpenGL_VersionMajor, args.OpenGL_VersionMinor);
 
 	if (!glfwInit()) goto err_t;
 
@@ -31,8 +31,8 @@ bool KGPL::init(const InitArgs& args) noexcept {
 
 	KGPL_LOG_INFO("GLEW initialized successfully");
 	KGPL_LOG_INFO("KGPL initialized successfully");
-	/*KGPL_LOG_INFO("OpenGL Version: %s", glGetString(GL_VERSION));
-	KGPL_LOG_INFO("OpenGL Renderer: %s", glGetString(GL_RENDERER));*/
+	KGPL_LOG_INFO("OpenGL Version: %s", glGetString(GL_VERSION));
+	KGPL_LOG_INFO("OpenGL Renderer: %s", glGetString(GL_RENDERER));
 	return true;
 	
 err_t:

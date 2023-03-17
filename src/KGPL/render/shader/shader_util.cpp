@@ -17,12 +17,12 @@
 
 		if (!success) {
 			glGetShaderInfoLog(VertexShader, 512, NULL, log);
-			KGPL_LOG_ERROR("Error compiling vertex shader:\n%s", log);
+			KGPL_LOG_ERROR("Error compiling vertex shader:\n\n%s", log);
 			return 0;
 		}
 	}
 
-	KGPL_LOG_INFO("Successfully compiled vertex shader");
+	if(debug) KGPL_LOG_INFO("Successfully compiled vertex shader");
 	return VertexShader;
 }
 
@@ -44,11 +44,11 @@
 
 		if (!success) {
 			glGetShaderInfoLog(FragmentShader, 512, NULL, log);
-			KGPL_LOG_ERROR("Error compiling fragment shader:\n%s", log);
+			KGPL_LOG_ERROR("Error compiling fragment shader:\n\n%s", log);
 			return 0;
 		}
 	}
 
-	KGPL_LOG_INFO("Successfully compiled fragment shader");
+	if(debug) KGPL_LOG_INFO("Successfully compiled fragment shader");
 	return FragmentShader;
 }

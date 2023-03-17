@@ -2,9 +2,11 @@
 #define __KGPL__
 
 //c stdlib
-#include <cstdio>
-#include <cstdlib>
-#include <cstdint>
+extern "C" {
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <stdint.h>
+}
 
 //dependency headers
 #include <GL/glew.h>
