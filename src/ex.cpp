@@ -6,9 +6,10 @@ int main(void)
         1200, 800, "Example Game"
     });
 
+    auto h = KGPL::CompileVertexShader("h");
+
     /* Loop until the user closes the window */
-    for (int i = 0; i < 100000; i++)
-    {
+    for (int i = 0; i < 100000; i++) {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 

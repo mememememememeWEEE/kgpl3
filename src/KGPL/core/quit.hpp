@@ -3,7 +3,7 @@
 #include "../kgpl.h"
 
 namespace KGPL {
-	void quit(void);
+	bool quit(void);
 }
 
 #endif
