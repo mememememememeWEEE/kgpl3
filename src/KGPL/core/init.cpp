@@ -1,19 +1,32 @@
 #include "init.hpp"
 
-bool KGPL::init(uint32_t width, uint32_t height) {
-	KGPL_LOG_INFO("initializing KGPL");
-	KGPL::PRIVATE::WindowWidth = width; KGPL::PRIVATE::WindowHeight = height; KGPL::PRIVATE::Initialized = true;
-	if (!glfwInit()) goto err;
-	KGPL::PRIVATE::Window = glfwCreateWindow(width, height, "KGPL", NULL, NULL);
-	if (!KGPL::PRIVATE::Window) goto err_t;
-	glfwMakeContextCurrent(KGPL::PRIVATE::Window);
+bool KGPL::init(const InitArgs& args) noexcept {
+	namespace KGPLm = KGPL::PRIVATE;
 
+	KGPL_LOG_INFO("Initializing KGPL");
+	KGPLm::WindowWidth = args.width; KGPLm::WindowHeight = args.height; KGPLm::Initialized = true;
+	KGPL_LOG_INFO("Creating window with args: \nwidth=%d\nheight=%d\ntitle=%s", KGPLm::WindowWidth, KGPLm::WindowHeight, args.title);
+
+	if (!glfwInit()) goto err_t;
+	KGPLm::Window = glfwCreateWindow(KGPLm::WindowWidth, KGPLm::WindowHeight, args.title, NULL, NULL);
+	if (!KGPLm::Window) goto err_t;
+	glfwMakeContextCurrent(KGPLm::Window);
+	KGPL_LOG_INFO("GLFW initialized successfully");
+
+	if (glewInit() != GLEW_OK) goto err_y;
+
+	KGPL_LOG_INFO("GLEW initialized successfully");
 	KGPL_LOG_INFO("KGPL initialized successfully");
 	return true;
 	
 err_t:
-	glfwTerminate();
+	glfwTerminate(); 
+	KGPL_LOG_ERROR("Failed to initialize GLFW");
+	goto err;
+err_y:
+	KGPL_LOG_ERROR("Failed to initialize GLEW");
+	goto err;
 err:
-	KGPL_LOG_ERROR("failed to initialize KGPL");
+	KGPL_LOG_ERROR("Failed to initialize KGPL");
 	return false;
 }

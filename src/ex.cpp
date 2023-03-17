@@ -2,7 +2,9 @@
 
 int main(void)
 {
-    KGPL::init(600, 400);
+    KGPL::init({
+        1200, 800, "Example Game"
+    });
 
     /* Loop until the user closes the window */
     for (int i = 0; i < 100000; i++)

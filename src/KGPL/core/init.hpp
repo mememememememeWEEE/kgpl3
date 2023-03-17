@@ -3,7 +3,13 @@
 #include "../kgpl.h"
 
 namespace KGPL {
-	bool init(uint32_t width, uint32_t height);
+	struct InitArgs final {
+		uint32_t width = 600;
+		uint32_t height = 600;
+		const char* title = "KGPL";
+	};
+
+	bool init(const InitArgs& args) noexcept;
 }
 
 #endif
