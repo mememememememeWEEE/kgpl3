@@ -52,3 +52,30 @@
 	if(debug) KGPL_LOG_INFO("Successfully compiled fragment shader");
 	return FragmentShader;
 }
+
+[[nodiscard]] GLuint CompileGeometryShader(const char* source, bool debug) {
+	GLuint GeometryShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	if (GeometryShader == 0) {
+		KGPL_LOG_ERROR("Error creating fragment shader");
+		return 0;
+	}
+
+	glShaderSource(GeometryShader, 1, &source, NULL);
+	glCompileShader(GeometryShader);
+
+	if (debug) {
+		GLint success;
+		char log[512];
+		glGetShaderiv(GeometryShader, GL_COMPILE_STATUS, &success);
+
+		if (!success) {
+			glGetShaderInfoLog(GeometryShader, 512, NULL, log);
+			KGPL_LOG_ERROR("Error compiling fragment shader:\n\n%s", log);
+			return 0;
+		}
+	}
+
+	if(debug) KGPL_LOG_INFO("Successfully compiled fragment shader");
+	return GeometryShader;
+}

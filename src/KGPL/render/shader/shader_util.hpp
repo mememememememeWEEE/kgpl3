@@ -7,6 +7,7 @@ namespace KGPL {
 		inline namespace ShaderUtil {
 			[[nodiscard]] GLuint CompileVertexShader(const char* source, bool debug = false);
 			[[nodiscard]] GLuint CompileFragmentShader(const char* source, bool debug = false);
+			[[nodiscard]] GLuint CompileGeometryShader(const char* source, bool debug = false);
 		}
 	}
 }
