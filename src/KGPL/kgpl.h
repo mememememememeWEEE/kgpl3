@@ -1,17 +1,19 @@
 #ifndef __KGPL__
 #define __KGPL__
 
-extern "C" {
 //c stdlib
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstdint>
 
 //dependency headers
 #include <GLFW/glfw3.h>
 
 //library headers
-#include "core/init.h"
-#include "core/quit.h"
-}
+#include "util/log.h"
+#include "core/global.hpp"
+#include "core/init.hpp"
+#include "core/quit.hpp"
+
 
 #endif
