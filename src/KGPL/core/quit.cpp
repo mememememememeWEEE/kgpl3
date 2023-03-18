@@ -8,8 +8,4 @@ bool KGPL::quit(void) {
 	glfwTerminate();
 	KGPL_LOG_INFO("Quitted KGPL successfully");
 	return true;
-
-err:
-	KGPL_LOG_ERROR("Failed to quit KGPL");
-	return false;
 }
