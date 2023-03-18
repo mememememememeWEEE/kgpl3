@@ -1,10 +1,15 @@
 #include "quit.hpp"
 
-void KGPL::quit(void) {
+bool KGPL::quit(void) {
 	namespace KGPLm = KGPL::PRIVATE;
 
 	KGPL_LOG_INFO("Quitting KGPL");
 	glfwDestroyWindow(KGPLm::Window);
 	glfwTerminate();
 	KGPL_LOG_INFO("Quitted KGPL successfully");
+	return true;
+
+err:
+	KGPL_LOG_ERROR("Failed to quit KGPL");
+	return false;
 }

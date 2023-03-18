@@ -7,6 +7,8 @@ namespace KGPL {
 		uint32_t width = 600;
 		uint32_t height = 600;
 		const char* title = "KGPL";
+		int OpenGL_VersionMajor = 3;
+		int OpenGL_VersionMinor = 3;
 	};
 
 	bool init(const InitArgs& args) noexcept;

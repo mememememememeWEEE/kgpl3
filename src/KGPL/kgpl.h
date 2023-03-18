@@ -2,12 +2,13 @@
 #define __KGPL__
 
 //c stdlib
-#include <cstdio>
-#include <cstdlib>
-#include <cstdint>
+extern "C" {
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <stdint.h>
+}
 
 //dependency headers
-#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
