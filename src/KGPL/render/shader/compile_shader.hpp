@@ -8,6 +8,10 @@ namespace KGPL {
 			[[nodiscard]] GLuint CompileVertexShader(const char* source, bool debug = false);
 			[[nodiscard]] GLuint CompileFragmentShader(const char* source, bool debug = false);
 			[[nodiscard]] GLuint CompileGeometryShader(const char* source, bool debug = false);
+
+			[[nodiscard]] GLuint CompileVertexShaderFromFile(const char* path, bool debug = false);
+			[[nodiscard]] GLuint CompileFragmentShaderFromFile(const char* path, bool debug = false);
+			[[nodiscard]] GLuint CompileGeometryShaderFromFile(const char* path, bool debug = false);
 		}
 	}
 }

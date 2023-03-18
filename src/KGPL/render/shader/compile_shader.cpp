@@ -1,5 +1,6 @@
-#include "../renderer.hpp"
+#include "compile_shader.hpp"
 
+#pragma region CompileRaw
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShader(const char* source, bool debug) {
 	GLuint VertexShader = glCreateShader(GL_VERTEX_SHADER);
 	if (VertexShader == 0) {
@@ -79,3 +80,114 @@
 	if(debug) KGPL_LOG_INFO("Successfully compiled geometry shader");
 	return GeometryShader;
 }
+#pragma endregion
+
+#pragma region CompileFile
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(const char* path, bool debug) {
+	FILE* f;
+	size_t s;
+	char* b;
+	GLuint res;
+	
+	f = fopen(path, "rb");
+	if (!f) {
+		KGPL_LOG_ERROR("Failed to open the file: %s", path); return 0;
+	}
+
+	fseek(f, 0L, SEEK_END);
+	s = ftell(f);
+	rewind(f);
+
+	b = (char*) calloc(1, s + 1);
+	if (!b) {
+		fclose(f);
+		KGPL_LOG_ERROR("Failed to allocate memory");
+		return 0;
+	}
+
+	if (1 != fread(b, s, 1, f)) {
+		fclose(f); free(b); 
+		KGPL_LOG_ERROR("Failed to read the file %s", path);
+		return 0;
+	}
+
+	res = KGPL::Render::ShaderUtil::CompileVertexShader(b, debug);
+
+	fclose(f);
+	free(b);
+
+	return res;
+}
+
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(const char* path, bool debug) {
+	FILE* f;
+	size_t s;
+	char* b;
+	GLuint res;
+
+	f = fopen(path, "rb");
+	if (!f) {
+		KGPL_LOG_ERROR("Failed to open the file: %s", path); return 0;
+	}
+
+	fseek(f, 0L, SEEK_END);
+	s = ftell(f);
+	rewind(f);
+
+	b = (char*)calloc(1, s + 1);
+	if (!b) {
+		fclose(f);
+		KGPL_LOG_ERROR("Failed to allocate memory");
+		return 0;
+	}
+
+	if (1 != fread(b, s, 1, f)) {
+		fclose(f); free(b);
+		KGPL_LOG_ERROR("Failed to read the file %s", path);
+		return 0;
+	}
+
+	res = KGPL::Render::ShaderUtil::CompileFragmentShader(b, debug);
+
+	fclose(f);
+	free(b);
+
+	return res;
+}
+
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileGeometryShaderFromFile(const char* path, bool debug) {
+	FILE* f;
+	size_t s;
+	char* b;
+	GLuint res;
+
+	f = fopen(path, "rb");
+	if (!f) {
+		KGPL_LOG_ERROR("Failed to open the file: %s", path); return 0;
+	}
+
+	fseek(f, 0L, SEEK_END);
+	s = ftell(f);
+	rewind(f);
+
+	b = (char*)calloc(1, s + 1);
+	if (!b) {
+		fclose(f);
+		KGPL_LOG_ERROR("Failed to allocate memory");
+		return 0;
+	}
+
+	if (1 != fread(b, s, 1, f)) {
+		fclose(f); free(b);
+		KGPL_LOG_ERROR("Failed to read the file %s", path);
+		return 0;
+	}
+
+	res = KGPL::Render::ShaderUtil::CompileGeometryShader(b, debug);
+
+	fclose(f);
+	free(b);
+
+	return res;
+}
+#pragma endregion
