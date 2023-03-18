@@ -1,5 +1,8 @@
 #include "compile_shader.hpp"
 
+#define GUESS 512
+
+#pragma region CompileRaw
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShader(const char* source, bool debug) {
 	GLuint VertexShader = glCreateShader(GL_VERTEX_SHADER);
 	if (VertexShader == 0) {
@@ -79,9 +82,11 @@
 	if(debug) KGPL_LOG_INFO("Successfully compiled geometry shader");
 	return GeometryShader;
 }
+#pragma endregion
 
+#pragma region CompileFile
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(const char* path, bool debug) {
-	
+
 }
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(const char* path, bool debug) {
@@ -89,3 +94,6 @@
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileGeometryShaderFromFile(const char* path, bool debug) {
 }
+#pragma endregion
+
+#undef GUESS
