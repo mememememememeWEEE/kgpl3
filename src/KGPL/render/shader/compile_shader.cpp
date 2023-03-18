@@ -1,4 +1,4 @@
-#include "../renderer.hpp"
+#include "compile_shader.hpp"
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShader(const char* source, bool debug) {
 	GLuint VertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -81,6 +81,7 @@
 }
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(const char* path, bool debug) {
+	
 }
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(const char* path, bool debug) {
