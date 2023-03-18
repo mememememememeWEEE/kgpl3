@@ -1,6 +1,6 @@
-#include "renderer_init.hpp"
+#include "renderer.hpp"
 
-bool KGPL::Render::RendererInit() {
+bool KGPL::Render::RendererInit(void) {
 	namespace KGPLm = KGPL::PRIVATE;
 
 	KGPL::setVertexShader2D(KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Vert2D.glsl)", true));

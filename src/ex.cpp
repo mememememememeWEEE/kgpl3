@@ -26,12 +26,12 @@ int main(void) {
 
 
     for (int i = 0; i < 100000; i++) {
-        
-        /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         glUseProgram(KGPL::PRIVATE::ShaderProgram2D);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
         glfwSwapBuffers(KGPL::PRIVATE::Window);
         glfwPollEvents();
     }
