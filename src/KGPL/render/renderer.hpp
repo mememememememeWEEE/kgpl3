@@ -6,5 +6,7 @@
 #include "shader/compile_shader.hpp"
 #include "shader/shader_program.hpp"
 
+#include "2D/2D.hpp"
+
 namespace KGPL { inline namespace Render {}; };
 #endif
