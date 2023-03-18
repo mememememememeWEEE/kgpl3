@@ -79,3 +79,12 @@
 	if(debug) KGPL_LOG_INFO("Successfully compiled geometry shader");
 	return GeometryShader;
 }
+
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(const char* path, bool debug) {
+}
+
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(const char* path, bool debug) {
+}
+
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileGeometryShaderFromFile(const char* path, bool debug) {
+}
