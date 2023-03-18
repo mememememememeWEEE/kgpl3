@@ -1,18 +1,19 @@
 #include "shader_program.hpp"
 
-GLuint KGPL::Render::ShaderProgram::CreateProgram(GLuint VertShader, GLuint FragShader, GLuint GeoShader) {
+[[nodiscard]] GLuint KGPL::Render::ShaderUtil::CreateProgram(
+		GLuint VertShader, GLuint FragShader, 
+		GLuint GeoShader, bool debug
+) {
+
 	GLuint program = glCreateProgram();
 
 	glAttachShader(program, VertShader);
 	glAttachShader(program, FragShader);
 
 	if (GeoShader != NULL) glAttachShader(program, GeoShader);
-	return program;
-}
 
-bool KGPL::Render::ShaderProgram::LinkProgram(GLuint program, GLuint VertShader, GLuint FragShader, GLuint GeoShader, bool debug) {
 	glLinkProgram(program);
-	
+
 	if (debug) {
 		GLint success;
 		char log[512];
@@ -21,12 +22,13 @@ bool KGPL::Render::ShaderProgram::LinkProgram(GLuint program, GLuint VertShader,
 		if (!success) {
 			glGetProgramInfoLog(program, 512, NULL, log);
 			KGPL_LOG_ERROR("Error linking shader program:\n\n%s", log);
-			return false;
+			return NULL;
 		}
 	}
-	
+
 	glDeleteShader(VertShader);
 	glDeleteShader(FragShader);
 	if (GeoShader != NULL) glDeleteShader(GeoShader);
-	return true;
+
+	return program;
 }
