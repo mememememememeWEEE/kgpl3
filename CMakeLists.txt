@@ -6,6 +6,6 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 
 add_subdirectory(src/KGPL)
 
-add_executable(${PROJECT_NAME} src/ex.cpp "out/build/x64-Debug/shader/compile_shader.cpp")
+add_executable(${PROJECT_NAME} src/ex.cpp)
 
 target_link_libraries(${PROJECT_NAME} KGPL)

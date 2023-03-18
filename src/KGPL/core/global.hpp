@@ -39,28 +39,34 @@ namespace KGPL {
 		KGPL::PRIVATE::ShaderProgram3D = program;
 	}
 
-	inline void setVertexShader2D(GLuint shader) {
-		KGPL::PRIVATE::CurVertexShader2D = shader;
+	inline bool setVertexShader2D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Vertex shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurVertexShader2D = shader; return true;
 	}
 
-	inline void setFragmentShader2D(GLuint shader) {
-		KGPL::PRIVATE::CurFragmentShader2D = shader;
+	inline bool setFragmentShader2D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Fragment shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurFragmentShader2D = shader; return true;
 	}
 
-	inline void setGeometryShader2D(GLuint shader) {
-		KGPL::PRIVATE::CurGeometryShader2D = shader;
+	inline bool setGeometryShader2D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Geometry shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurGeometryShader2D = shader; return true;
 	}
 
-	inline void setVertexShader3D(GLuint shader) {
-		KGPL::PRIVATE::CurVertexShader3D = shader;
+	inline bool setVertexShader3D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Vertex shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurVertexShader3D = shader; return true;
 	}
 
-	inline void setFragmentShader3D(GLuint shader) {
-		KGPL::PRIVATE::CurFragmentShader3D = shader;
+	inline bool setFragmentShader3D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Fragment shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurFragmentShader3D = shader; return true;
 	}
 
-	inline void setGeometryShader3D(GLuint shader) {
-		KGPL::PRIVATE::CurGeometryShader3D = shader;
+	inline bool setGeometryShader3D(GLuint shader) {
+		if (shader == NULL) { KGPL_LOG_ERROR("Geometry shader provided is `NULL`"); return false; }
+		KGPL::PRIVATE::CurGeometryShader3D = shader; return true;
 	}
 
 #pragma endregion

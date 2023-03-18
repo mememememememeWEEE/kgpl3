@@ -1,8 +1,11 @@
 #include "renderer_init.hpp"
 
 bool KGPL::Render::RendererInit() {
-	system("echo %cd%");
-	KGPL::setVertexShader2D(KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(R"(../shader/Vert2D.glsl)", true));
+	namespace KGPLm = KGPL::PRIVATE;
+
+	KGPL::setVertexShader2D(KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Vert2D.glsl)", true));
 	KGPL::setFragmentShader2D(KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Frag2D.glsl)", true));
+	KGPL::setShaderProgram2D(KGPL::Render::ShaderProgram::CreateProgram(KGPLm::CurVertexShader2D, KGPLm::CurFragmentShader2D, NULL));
+	KGPL::Render::ShaderProgram::LinkProgram(KGPLm::ShaderProgram2D, KGPLm::CurVertexShader2D, KGPLm::CurFragmentShader2D, NULL);
 	return true;
 }
