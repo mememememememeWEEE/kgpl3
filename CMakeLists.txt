@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(KGPL-demo)
+project(KGPL-demo DESCRIPTION "Example for KGPL")
 
 #okay where are FindGLFW.cmake and FindGLEW.cmake bruh
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")

@@ -1,5 +1,5 @@
-#ifndef __KGPL__
-#define __KGPL__
+#ifndef KGPL_H
+#define KGPL_H
 
 //c stdlib
 extern "C" {
@@ -14,6 +14,7 @@ extern "C" {
 //dependency headers
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 
 //library headers
 #include "util/log.h"
