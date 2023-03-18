@@ -86,13 +86,15 @@
 
 #pragma region CompileFile
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileVertexShaderFromFile(const char* path, bool debug) {
-
+	return 0;
 }
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileFragmentShaderFromFile(const char* path, bool debug) {
+	return 0;
 }
 
 [[nodiscard]] GLuint KGPL::Render::ShaderUtil::CompileGeometryShaderFromFile(const char* path, bool debug) {
+	return 0;
 }
 #pragma endregion
 

@@ -17,10 +17,11 @@ extern "C" {
 
 //library headers
 #include "util/log.h"
-#include "util/files.h"
+
+#include "render/renderer.hpp"
+
 #include "core/global.hpp"
 #include "core/init.hpp"
 #include "core/quit.hpp"
-#include "render/renderer.hpp"
 
 #endif
