@@ -9,7 +9,6 @@ find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -O2")
 add_library(KGPL STATIC ${KGPL_SRC})
 
 target_link_libraries(KGPL
