@@ -11,7 +11,8 @@ namespace KGPL {
 		int OpenGL_VersionMinor = 3;
 	};
 
-	bool init(const InitArgs& args) noexcept;
+	//use a shared pointer later
+	bool init(const InitArgs& args, Scene* CurrentScene) noexcept;
 }
 
 #endif

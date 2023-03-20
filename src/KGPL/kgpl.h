@@ -3,13 +3,10 @@
 
 //c stdlib
 extern "C" {
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <stdint.h>
-}
-
-//c++ stdlib, should prioritize c over c++
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+};
 
 //dependency headers
 #include <GL/glew.h>
@@ -21,8 +18,10 @@ extern "C" {
 
 #include "render/renderer.hpp"
 
+#include "core/scene.hpp"
 #include "core/global.hpp"
 #include "core/init.hpp"
 #include "core/quit.hpp"
+#include "core/next_frame.hpp"
 
 #endif
