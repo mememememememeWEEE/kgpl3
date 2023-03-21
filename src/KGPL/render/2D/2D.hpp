@@ -4,7 +4,8 @@
 
 namespace KGPL {
 	namespace Render2D {
-		
+		bool prepare();
+		bool render();
 	}
 }
 

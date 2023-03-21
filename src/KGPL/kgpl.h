@@ -4,7 +4,6 @@
 #include "common.h"
 
 //library headers
-#include "render/shader/shaders.hpp"
 #include "render/renderer.hpp"
 
 #include "core/scene.hpp"

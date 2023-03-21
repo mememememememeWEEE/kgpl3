@@ -18,4 +18,5 @@ namespace KGPL {
 		void RendererQuit(void);
 	}; 
 };
+
 #endif
