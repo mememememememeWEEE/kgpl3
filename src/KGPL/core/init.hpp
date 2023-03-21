@@ -12,7 +12,7 @@ namespace KGPL {
 	};
 
 	//use a shared pointer later
-	bool init(const InitArgs& args, Scene* CurrentScene) noexcept;
+	bool init(const InitArgs& args) noexcept;
 }
 
 #endif

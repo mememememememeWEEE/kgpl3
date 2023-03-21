@@ -161,6 +161,8 @@
 	char* b;
 	GLuint res;
 
+	if (path == NULL) return NULL;
+
 	f = fopen(path, "rb");
 	if (!f) {
 		KGPL_LOG_ERROR("Failed to open the file: %s", path); return 0;

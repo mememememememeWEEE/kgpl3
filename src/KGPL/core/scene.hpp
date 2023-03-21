@@ -5,8 +5,7 @@
 namespace KGPL {
 	class Scene {
 	public:
-		Scene(const ShadersPath Shaders2D, const ShadersPath Shaders3D, bool two = true, bool three = true);
-		Scene(const ShadersRaw Shaders2D, const ShadersRaw Shaders3D, bool two = true, bool three = true);
+		Scene(const ShadersPath Shaders2D, const ShadersPath Shaders3D, bool debug, bool two, bool three);
 		~Scene();
 
 	//public for now

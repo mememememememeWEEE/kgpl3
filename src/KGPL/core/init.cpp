@@ -1,6 +1,6 @@
 #include "init.hpp"
 
-bool KGPL::init(const InitArgs& args, Scene* CurrentScene) noexcept {
+bool KGPL::init(const InitArgs& args) noexcept {
 	namespace KGPLm = KGPL::PRIVATE;
 
 	KGPL_LOG_INFO("Initializing KGPL");
@@ -37,7 +37,6 @@ bool KGPL::init(const InitArgs& args, Scene* CurrentScene) noexcept {
 #pragma endregion
 
 	if (!KGPL::Render::RendererInit()) goto err_r;
-	KGPLm::CurrentScene = CurrentScene;
 	KGPL_LOG_INFO("KGPL-Renderer initialized successfully");
 
 	KGPL_LOG_INFO("KGPL initialized successfully");

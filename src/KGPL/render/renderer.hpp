@@ -1,6 +1,8 @@
 #ifndef KGPL_RENDERER_H
 #define KGPL_RENDERER_H
-#include "../kgpl.h"
+
+//c stdlib
+#include "../common.h"
 
 #include "shader/shaders.hpp"
 #include "shader/compile_shader.hpp"

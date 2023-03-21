@@ -7,21 +7,23 @@ float vertices[] = {
 };
 
 int main(void) {
+    KGPL::init({
+        1200, 800, "Example Game"
+    });
+
     KGPL::Scene scene({
         KGPL::ShadersPath {
             R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Vert2D.glsl)",
-            R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Vert2D.glsl)",
+            R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Frag2D.glsl)",
             NULL,
         },
 
-        { NULL, NULL, NULL },
+        KGPL::ShadersPath { NULL, NULL, NULL },
 
-        true, false
+        true, true, false
     });
 
-    KGPL::init({
-        1200, 800, "Example Game"
-    }, &scene);
+    KGPL::bind(&scene);
 
     unsigned int VBO;
     glGenBuffers(1, &VBO);
