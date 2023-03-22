@@ -10,6 +10,9 @@ namespace KGPL {
 
 	//public for now
 	public:
+		bool Supports2D;
+		bool Supports3D;
+
 		GLuint ShaderProgram2D;
 		GLuint ShaderProgram3D;
 	};

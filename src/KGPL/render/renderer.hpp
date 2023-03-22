@@ -12,6 +12,8 @@
 
 #include "2D/2D.hpp"
 
+#include "../kgpl.h"
+
 namespace KGPL { 
 	inline namespace Render {
 		bool RendererInit(void);
