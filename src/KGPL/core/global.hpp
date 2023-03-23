@@ -1,10 +1,10 @@
 #ifndef KGPL_GLOBAL_H
 #define KGPL_GLOBAL_H
-#include "../kgpl.h"
-
-class Scene;
+#include "../common.h"
+#include "scene.hpp"
 
 namespace KGPL {
+	class Scene;
 	namespace PRIVATE {
 		extern bool Initialized;
 

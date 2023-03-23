@@ -3,6 +3,7 @@
 
 //c stdlib
 #include "../common.h"
+#include "../core/global.hpp"
 
 #include "shader/shaders.hpp"
 #include "shader/compile_shader.hpp"
@@ -12,8 +13,6 @@
 
 #include "2D/2D.hpp"
 #include "2D/texture2D.hpp"
-
-#include "../kgpl.h"
 
 namespace KGPL { 
 	inline namespace Render {

@@ -1,11 +1,12 @@
 #ifndef KGPL_SCENE_H
 #define KGPL_SCENE_H
-#include "../kgpl.h"
+#include "../common.h"
+#include "../render/shader/shaders.hpp"
 
 namespace KGPL {
 	class Entity2D;
 
-	class Scene {
+	class Scene final {
 	public:
 		Scene(const ShadersPath Shaders2D, const ShadersPath Shaders3D, bool debug, bool two, bool three);
 		~Scene();

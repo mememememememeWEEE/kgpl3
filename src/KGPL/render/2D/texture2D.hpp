@@ -1,6 +1,6 @@
 #ifndef KGPL_TEXTURE2D_H
 #define KGPL_TEXTURE2D_H
-#include "../renderer.hpp"
+#include "../../common.h"
 
 namespace KGPL {
 	namespace Render2D {

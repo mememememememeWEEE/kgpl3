@@ -1,5 +1,5 @@
 #include "core.hpp"
 
-void KGPL::bind(Scene* scene) {
+void KGPL::bind(KGPL::Scene* scene) {
 	KGPL::PRIVATE::CurrentScene = scene;
 }

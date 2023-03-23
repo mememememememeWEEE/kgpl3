@@ -1,9 +1,10 @@
 #ifndef KGPL_COMMON_H
 #define KGPL_COMMON_H
-#include "../kgpl.h"
+#include "../common.h"
+#include "scene.hpp"
 
 namespace KGPL {
-	void bind(Scene* scene);
+	void bind(KGPL::Scene* scene);
 
     struct InitArgs final {
 		uint32_t width = 600;

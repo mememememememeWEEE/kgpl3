@@ -9,6 +9,6 @@ namespace KGPL {
 
 		GLFWwindow* Window;
 
-		Scene* CurrentScene;
+		KGPL::Scene* CurrentScene;
 	}
 }
