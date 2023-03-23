@@ -11,6 +11,20 @@ int main(void) {
         1200, 800, "Example Game"
     });
 
+    KGPL::Scene scene({
+        KGPL::ShadersPath {
+            R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Vert2D.glsl)",
+            R"(C:\Users\rando\OneDrive\Documents\GitHub\kgpl3\shader\Frag2D.glsl)",
+            NULL,
+        },
+
+        KGPL::ShadersPath { NULL, NULL, NULL },
+
+        true, true, false
+    });
+
+    KGPL::bind(&scene);
+
     unsigned int VBO;
     glGenBuffers(1, &VBO);
 
@@ -26,12 +40,12 @@ int main(void) {
 
 
     for (int i = 0; i < 100000; i++) {
-        
-        /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glUseProgram(KGPL::PRIVATE::ShaderProgram2D);
+
+        glUseProgram(KGPL::getCurrentScene()->ShaderProgram2D);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
         glfwSwapBuffers(KGPL::PRIVATE::Window);
         glfwPollEvents();
     }
