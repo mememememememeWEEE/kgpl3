@@ -13,6 +13,8 @@ namespace KGPL {
 		bool Supports2D;
 		bool Supports3D;
 
+		std::vector<Entity2D*> Entities_2D;
+
 		GLuint ShaderProgram2D;
 		GLuint ShaderProgram3D;
 	};

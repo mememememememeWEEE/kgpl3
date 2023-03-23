@@ -11,6 +11,7 @@
 #include "renderer_render.hpp"
 
 #include "2D/2D.hpp"
+#include "2D/texture2D.hpp"
 
 #include "../kgpl.h"
 

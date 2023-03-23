@@ -8,6 +8,8 @@ extern "C" {
 #include <stdint.h>
 };
 
+#include <vector>
+
 //dependency headers
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
