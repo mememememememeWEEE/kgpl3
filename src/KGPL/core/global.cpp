@@ -1,4 +1,5 @@
-#include "../kgpl.h"
+#include "../common.h"
+#include "scene.hpp"
 
 namespace KGPL {
 	namespace PRIVATE {

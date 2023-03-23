@@ -1,6 +1,7 @@
 #ifndef KGPL_ENTITY2D_H
 #define KGPL_ENTITY2D_H
-#include "../../kgpl.h"
+#include "../../common.h"
+#include "../../render/2D/texture2D.hpp"
 
 namespace KGPL {
 	namespace Render2D {
