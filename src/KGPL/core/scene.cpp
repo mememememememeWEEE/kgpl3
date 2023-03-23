@@ -9,14 +9,14 @@ KGPL::Scene::Scene(const ShadersPath Shaders2D, const ShadersPath Shaders3D, boo
 			RSU::CompileVertexShaderFromFile(Shaders2D.VertexShader, debug),
 			RSU::CompileFragmentShaderFromFile(Shaders2D.FragmentShader, debug),
 			RSU::CompileGeometryShaderFromFile(Shaders2D.GeometryShader, debug)
-		), Supports2D = true; else ShaderProgram2D = NULL;
+		), Supports2D = true; else ShaderProgram2D = NULL, Supports2D = false;
 
 	if (three)
 		ShaderProgram3D = RSU::CreateProgram(
 			RSU::CompileVertexShaderFromFile(Shaders3D.VertexShader, debug),
 			RSU::CompileFragmentShaderFromFile(Shaders3D.FragmentShader, debug),
 			RSU::CompileGeometryShaderFromFile(Shaders3D.GeometryShader, debug)
-		), Supports3D = true; else ShaderProgram3D = NULL;
+		), Supports3D = true; else ShaderProgram3D = NULL, Supports2D = false;
 }
 
 //KGPL::Scene::Scene(const ShadersRaw Shaders2D, const ShadersRaw Shaders3D, bool two, bool three) {

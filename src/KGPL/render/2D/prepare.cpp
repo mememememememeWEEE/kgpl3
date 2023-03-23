@@ -5,4 +5,6 @@ bool KGPL::Render2D::prepare() {
         KGPL_LOG_ERROR("Current scene does not support 2D rendering");
         return false;
     }
+
+    return true;
 }
