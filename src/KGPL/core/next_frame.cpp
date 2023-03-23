@@ -1,4 +1,4 @@
-#include "next_frame.hpp"
+#include "core.hpp"
 
 void KGPL::NextFrame() {
 }

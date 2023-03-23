@@ -1,4 +1,4 @@
-#include "quit.hpp"
+#include "core.hpp"
 
 bool KGPL::quit(void) {
 	namespace KGPLm = KGPL::PRIVATE;

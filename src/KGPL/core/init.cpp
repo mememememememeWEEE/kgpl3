@@ -1,4 +1,4 @@
-#include "init.hpp"
+#include "core.hpp"
 
 bool KGPL::init(const InitArgs& args) noexcept {
 	namespace KGPLm = KGPL::PRIVATE;
