@@ -1,9 +1,11 @@
-#ifndef KGPL_INIT_H
-#define KGPL_INIT_H
+#ifndef KGPL_COMMON_H
+#define KGPL_COMMON_H
 #include "../kgpl.h"
 
 namespace KGPL {
-	struct InitArgs final {
+	void bind(Scene* scene);
+
+    struct InitArgs final {
 		uint32_t width = 600;
 		uint32_t height = 600;
 		const char* title = "KGPL";
@@ -13,6 +15,8 @@ namespace KGPL {
 
 	//use a shared pointer later
 	bool init(const InitArgs& args) noexcept;
+    void NextFrame();
+    bool quit(void);
 }
 
 #endif
