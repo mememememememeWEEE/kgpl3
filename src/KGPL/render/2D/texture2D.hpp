@@ -3,15 +3,13 @@
 #include "../renderer.hpp"
 
 namespace KGPL {
-	inline namespace Render {
-		namespace Render2D {
-			struct Texture2D final {
-				Texture2D(const char* path = NULL);
-				~Texture2D();
+	namespace Render2D {
+		struct Texture2D final {
+			Texture2D(const char* path = NULL);
+			~Texture2D();
 
-				GLuint texture;
-			};
-		}
+			GLuint texture;
+		};
 	}
 }
 

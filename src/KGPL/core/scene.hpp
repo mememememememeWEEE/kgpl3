@@ -3,6 +3,8 @@
 #include "../kgpl.h"
 
 namespace KGPL {
+	class Entity2D;
+
 	class Scene {
 	public:
 		Scene(const ShadersPath Shaders2D, const ShadersPath Shaders3D, bool debug, bool two, bool three);

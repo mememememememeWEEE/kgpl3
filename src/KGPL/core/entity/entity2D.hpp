@@ -3,6 +3,10 @@
 #include "../../kgpl.h"
 
 namespace KGPL {
+	namespace Render2D {
+		struct Texture2D;
+	}
+
 	class Entity2D {
 	public:
 		Entity2D();
@@ -12,7 +16,7 @@ namespace KGPL {
 
 	public:
 		bool visible;
-		Render::Render2D::Texture2D Texture;
+		Render2D::Texture2D Texture;
 	};
 }
 
